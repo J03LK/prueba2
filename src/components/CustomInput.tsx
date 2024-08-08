@@ -1,7 +1,6 @@
 import React from 'react';
-import { TextInput, StyleSheet, TextInputProps } from 'react-native';
+import { TextInput, TextInputProps, StyleSheet } from 'react-native';
 import { styles } from '../apptheme/AppTheme';
-
 
 interface CustomTextInputProps extends TextInputProps {
   placeholder: string;
@@ -9,7 +8,12 @@ interface CustomTextInputProps extends TextInputProps {
   onChangeText: (text: string) => void;
 }
 
-export const CustomTextInput: React.FC<CustomTextInputProps> = ({ placeholder, value, onChangeText, ...props }) => {
+export const CustomTextInput = ({
+  placeholder,
+  value,
+  onChangeText,
+  ...props
+}: CustomTextInputProps) => {
   return (
     <TextInput
       style={styles.input}
